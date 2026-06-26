@@ -58,3 +58,16 @@ String AnalogSensor::readValue() {
   float v = raw * _scale;
   return String(v);
 }
+
+DigitalSensor::DigitalSensor(const String &sensorId, uint8_t pin, bool pullup, bool invert)
+  : _id(sensorId), _pin(pin), _invert(invert) {
+  pinMode(_pin, pullup ? INPUT_PULLUP : INPUT);
+}
+
+String DigitalSensor::id() { return _id; }
+
+String DigitalSensor::readValue() {
+  int v = digitalRead(_pin);
+  bool val = _invert ? !v : v;
+  return val ? String("true") : String("false");
+}

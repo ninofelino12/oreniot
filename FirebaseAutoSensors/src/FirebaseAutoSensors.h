@@ -42,3 +42,15 @@ private:
   uint8_t _pin;
   float _scale;
 };
+
+// Helper: simple digital/pushbutton sensor
+class DigitalSensor : public SensorBase {
+public:
+  DigitalSensor(const String &sensorId, uint8_t pin, bool pullup = true, bool invert = false);
+  String id() override;
+  String readValue() override;
+private:
+  String _id;
+  uint8_t _pin;
+  bool _invert;
+};
