@@ -1,5 +1,7 @@
 # FirebaseAutoSensors
 
+![Release](https://img.shields.io/github/v/release/ninofelino12/oreniot?label=FirebaseAutoSensors%20v&style=flat-square)
+
 Library to auto-register sensors and push their values to Firebase Realtime Database using REST API.
 
 Installation
